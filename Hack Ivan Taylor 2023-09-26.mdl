@@ -1,0 +1,630 @@
+{UTF-8}
+perception of AI tools=
+	Quality of AI Tools*(IMPACT OF COMMUNITY BELIEFS ON PERCEPTIONS OF AI TOOLS(Community Beliefs\
+		)+IMPACT OF COMMUNITY KNOWLEDGE ON PERCEPTION OF AI TOOLS
+	(Community Knowledge))*(1-unemployment rate)/2
+	~	Dmnl
+	~		|
+
+AVERAGE AI WORKERS PER INSTITUTION=
+	100
+	~	people/institutions
+	~		|
+
+AVERAGE DISPLACEMENT PER INSTITUTION=
+	10000
+	~	people/institutions
+	~		|
+
+change in community beliefs=
+	(expected community beliefs-Community Beliefs)/TIME TO CHANGE COMMUNITY BELIEFS
+	~	Dmnl/Month
+	~		|
+
+change in community knowledge=
+	(expected community knowledge-Community Knowledge)/TIME TO CHANGE COMMUNITY KNOWLEDGE
+	~	Dmnl/Month
+	~		|
+
+change in quality of AI tools=
+	(expected quality of AI tools-Quality of AI Tools)/TIME TO CHANGE QUALITY OF AI TOOLS
+	~	Dmnl/Month
+	~		|
+
+change in quality of social discourse=
+	(expected quality of social discourse-Quality of Social Discourse)/TIME TO CHANGE SOCIAL DISCOURSE
+	~	Dmnl/Month
+	~		|
+
+Community Beliefs= INTEG (
+	change in community beliefs,
+		INITIAL COMMUNITY BELIEFS)
+	~	Dmnl
+	~		|
+
+Community Knowledge= INTEG (
+	change in community knowledge,
+		INITIAL COMMUNITY KNOWLEDGE)
+	~	Dmnl
+	~		|
+
+desired workers=
+	INITIAL WORKERS+Institution AI Tool Adoption*AVERAGE AI WORKERS PER INSTITUTION-Institution AI Tool Adoption\
+		*AVERAGE DISPLACEMENT PER INSTITUTION
+	~	people
+	~		|
+
+ETHICS=
+	MULTIPLIER
+	~	Dmnl
+	~		|
+
+expected community beliefs=
+	INITIAL COMMUNITY BELIEFS*IMPACT OF AI TRANSPARENCY ON COMMUNITY BELIEFS(perception of AI tools\
+		)*Quality of Social Discourse
+	~	Dmnl
+	~		|
+
+expected community knowledge=
+	INITIAL COMMUNITY KNOWLEDGE*IMPACT OF AI LITERACY ON COMMUNITY KNOWLEDGE(perception of AI tools\
+		)*Quality of Social Discourse
+	~	Dmnl
+	~		|
+
+expected quality of AI tools=
+	INITIAL QUALITY OF AI TOOLS*REGULATIONS*ETHICS*PUBLIC PRIVATE PARTNERSHIPS*QUALITY STANDARDS\
+		*RESPONSIBLE RESEARCH
+	~	Dmnl
+	~		|
+
+expected quality of social discourse=
+	IMPACT OF AI QUALITY ON SOCIAL DISCOURSE(perception of AI tools)*INITIAL QUALITY OF SOCIAL DISCOURSE
+	~	Dmnl
+	~		|
+
+IMPACT OF AI EDUCATION ON USER ADOPTION RATE(
+	[(0,0)-(10,10)],(0,0),(1,1),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF AI LITERACY ON COMMUNITY KNOWLEDGE(
+	[(0,0)-(10,10)],(0,0),(1,1),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF AI PERCEPTION ON INSTITUTION ADOPTION RATE(
+	[(0,0)-(10,10)],(0,0),(1,1),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF AI PERCEPTION ON TIME FOR INSTITUTIONS TO ABANDON(
+	[(0,0)-(10,20)],(0,0),(1,1),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF AI PERCEPTION ON TIME FOR USER TO ABANDON(
+	[(0,0)-(10,10)],(0,0),(1,1),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF AI QUALITY ON SOCIAL DISCOURSE(
+	[(0,0)-(10,10)],(0,0),(1,1.5),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF AI TRANSPARENCY ON COMMUNITY BELIEFS(
+	[(0,0)-(10,10)],(0,0),(1,1),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF COMMUNITY BELIEFS ON PERCEPTIONS OF AI TOOLS(
+	[(0,0)-(2,2)],(0,0),(0.5,0.25),(1,1),(1.5,1.75),(2,2))
+	~	Dmnl
+	~		|
+
+IMPACT OF COMMUNITY KNOWLEDGE ON PERCEPTION OF AI TOOLS(
+	[(0,0)-(2,2)],(0,0),(0.5,0.25),(1,1),(1.5,1.75),(2,2))
+	~	Dmnl
+	~		|
+
+INITIAL COMMUNITY BELIEFS=
+	1
+	~	Dmnl
+	~		|
+
+INITIAL COMMUNITY KNOWLEDGE=
+	1
+	~	Dmnl
+	~		|
+
+INITIAL EMPLOYMENT RATE=
+	0.95
+	~	Dmnl
+	~		|
+
+INITIAL INSTITUTIONS=
+	1
+	~	institutions
+	~		|
+
+INITIAL QUALITY OF AI TOOLS=
+	1
+	~	Dmnl
+	~		|
+
+INITIAL QUALITY OF SOCIAL DISCOURSE=
+	0.5
+	~	Dmnl
+	~		|
+
+INITIAL USERS=
+	1
+	~	people
+	~		|
+
+INITIAL WORKERS=
+	INITIAL WORKING AGE POPULATION*INITIAL EMPLOYMENT RATE
+	~	people
+	~		|
+
+INITIAL WORKING AGE POPULATION=
+	3e+008
+	~	people
+	~		|
+
+institution abandonment=
+	Institution AI Tool Adoption/time for institutions to abandon
+	~	institutions/Month
+	~		|
+
+institution adoption=
+	Institution AI Tool Adoption*institution adoption rate*(1-Institution AI Tool Adoption\
+		/LIMIT ON INSTITUTIONS)
+	~	institutions/Month
+	~		|
+
+institution adoption rate=
+	NORMAL INSTITUTION ADOPTION RATE*IMPACT OF AI PERCEPTION ON INSTITUTION ADOPTION RATE\
+		(perception of AI tools)
+	~	1/Month
+	~		|
+
+Institution AI Tool Adoption= INTEG (
+	institution adoption-institution abandonment,
+		INITIAL INSTITUTIONS)
+	~	institutions
+	~		|
+
+LIMIT ON INSTITUTIONS=
+	10000
+	~	institutions
+	~		|
+
+LIMIT ON USERS=
+	3e+008
+	~	people
+	~		|
+
+MULTIPLIER=
+	1.2
+	~	Dmnl
+	~		|
+
+NORMAL INSTITUTION ADOPTION RATE=
+	0.5
+	~	1/Month
+	~		|
+
+NORMAL TIME FOR INSTITUTIONS TO ABANDON=
+	12
+	~	Month
+	~		|
+
+NORMAL TIME FOR USERS TO ABANDON=
+	12
+	~	Month
+	~		|
+
+NORMAL USER ADOPTION RATE=
+	1
+	~	1/Month
+	~		|
+
+PUBLIC PRIVATE PARTNERSHIPS=
+	MULTIPLIER
+	~	Dmnl
+	~		|
+
+Quality of AI Tools= INTEG (
+	change in quality of AI tools,
+		INITIAL QUALITY OF AI TOOLS)
+	~	Dmnl
+	~		|
+
+Quality of Social Discourse= INTEG (
+	change in quality of social discourse,
+		INITIAL QUALITY OF SOCIAL DISCOURSE)
+	~	Dmnl
+	~		|
+
+QUALITY STANDARDS=
+	MULTIPLIER
+	~	Dmnl
+	~		|
+
+REGULATIONS=
+	MULTIPLIER
+	~	Dmnl
+	~		|
+
+RESPONSIBLE RESEARCH=
+	MULTIPLIER
+	~	Dmnl
+	~		|
+
+supply of AI workers=
+	(desired workers-Workers)/TIME TO HIRE AND LAY OFF
+	~	people/Month
+	~		|
+
+time for institutions to abandon=
+	NORMAL TIME FOR INSTITUTIONS TO ABANDON*IMPACT OF AI PERCEPTION ON TIME FOR INSTITUTIONS TO ABANDON\
+		(perception of AI tools)
+	~	Month
+	~		|
+
+time for users to abandon=
+	NORMAL TIME FOR USERS TO ABANDON*IMPACT OF AI PERCEPTION ON TIME FOR USER TO ABANDON\
+		(perception of AI tools)
+	~	Month
+	~		|
+
+TIME TO CHANGE COMMUNITY BELIEFS=
+	12
+	~	Month
+	~		|
+
+TIME TO CHANGE COMMUNITY KNOWLEDGE=
+	12
+	~	Month
+	~		|
+
+TIME TO CHANGE QUALITY OF AI TOOLS=
+	12
+	~	Month
+	~		|
+
+TIME TO CHANGE SOCIAL DISCOURSE=
+	12
+	~	Month
+	~		|
+
+TIME TO HIRE AND LAY OFF=
+	6
+	~	Month
+	~		|
+
+unemployment rate=
+	(INITIAL WORKING AGE POPULATION-Workers)/INITIAL WORKING AGE POPULATION
+	~	Dmnl
+	~		|
+
+user abandonment=
+	User AI Tool Adoption/time for users to abandon
+	~	people/Month
+	~		|
+
+user adoption=
+	User AI Tool Adoption*user adoption rate*(1-User AI Tool Adoption/LIMIT ON USERS)
+	~	people/Month
+	~		|
+
+user adoption rate=
+	NORMAL USER ADOPTION RATE*IMPACT OF AI EDUCATION ON USER ADOPTION RATE(perception of AI tools\
+		)
+	~	1/Month
+	~		|
+
+User AI Tool Adoption= INTEG (
+	user adoption-user abandonment,
+		INITIAL USERS)
+	~	people
+	~		|
+
+Workers= INTEG (
+	supply of AI workers,
+		INITIAL WORKERS)
+	~	people
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 24
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,User AI Tool Adoption,761,351,49,32,3,131,0,0,0,0,0,0
+12,2,48,538,355,10,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(674,355)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(586,355)|
+11,5,48,630,355,6,8,34,3,0,0,1,0,0,0
+10,6,user adoption,630,379,60,16,40,131,0,0,-1,0,0,0
+12,7,48,988,351,10,8,0,3,0,0,-1,0,0,0
+1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(939,351)|
+1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(849,351)|
+11,10,48,894,351,6,8,34,3,0,0,1,0,0,0
+10,11,user abandonment,894,370,57,11,40,3,0,0,-1,0,0,0
+10,12,INITIAL USERS,755,222,56,11,8,3,0,0,0,0,0,0
+10,13,Institution AI Tool Adoption,767,535,50,31,3,131,0,0,0,0,0,0
+12,14,48,534,529,10,8,0,3,0,0,-1,0,0,0
+1,15,17,13,4,0,0,22,0,0,0,-1--1--1,,1|(677,529)|
+1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(585,529)|
+11,17,48,632,529,6,8,34,3,0,0,1,0,0,0
+10,18,institution adoption,632,548,59,11,40,3,0,0,-1,0,0,0
+12,19,48,989,528,10,8,0,3,0,0,-1,0,0,0
+1,20,22,19,4,0,0,22,0,0,0,-1--1--1,,1|(942,528)|
+1,21,22,13,100,0,0,22,0,0,0,-1--1--1,,1|(855,528)|
+11,22,48,899,528,6,8,34,3,0,0,1,0,0,0
+10,23,institution abandonment,899,555,43,19,40,3,0,0,-1,0,0,0
+10,24,INITIAL INSTITUTIONS,757,446,57,19,8,3,0,0,0,0,0,0
+1,25,12,1,1,0,0,0,0,64,1,-1--1--1,,1|(778,259)|
+1,26,24,13,1,0,0,0,0,64,1,-1--1--1,,1|(776,479)|
+1,27,1,11,1,0,0,0,0,64,0,-1--1--1,,1|(820,409)|
+1,28,13,23,1,0,0,0,0,64,0,-1--1--1,,1|(801,591)|
+10,29,time for users to abandon,1074,429,66,19,8,3,0,0,0,0,0,0
+10,30,time for institutions to abandon,1073,610,59,28,8,3,0,0,0,0,0,0
+10,31,user adoption rate,483,427,57,11,8,3,0,0,0,0,0,0
+10,32,institution adoption rate,468,624,43,19,8,3,0,0,0,0,0,0
+1,33,31,6,1,0,0,0,0,64,0,-1--1--1,,1|(555,437)|
+1,34,32,18,1,0,0,0,0,64,0,-1--1--1,,1|(528,623)|
+1,35,29,11,1,0,0,0,0,64,0,-1--1--1,,1|(997,437)|
+1,36,30,23,1,0,0,0,0,64,0,-1--1--1,,1|(993,626)|
+1,37,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(713,399)|
+1,38,13,18,1,0,0,0,0,64,0,-1--1--1,,1|(737,588)|
+10,39,NORMAL USER ADOPTION RATE,281,364,66,19,8,3,0,0,0,0,0,0
+10,40,NORMAL INSTITUTION ADOPTION RATE,251,668,66,28,8,3,0,0,0,0,0,0
+1,41,39,31,1,0,0,0,0,64,0,-1--1--1,,1|(318,406)|
+1,42,40,32,1,0,0,0,0,64,0,-1--1--1,,1|(334,682)|
+10,43,NORMAL TIME FOR USERS TO ABANDON,1283,331,82,19,8,3,0,0,0,0,0,0
+10,44,NORMAL TIME FOR INSTITUTIONS TO ABANDON,1275,648,76,28,8,3,0,0,0,0,0,0
+1,45,43,29,1,0,0,0,0,64,0,-1--1--1,,1|(1255,383)|
+1,46,44,30,1,0,0,0,0,64,0,-1--1--1,,1|(1196,670)|
+10,47,perception of AI tools,239,532,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,48,47,31,1,0,0,0,0,64,0,-1--1--1,,1|(353,509)|
+1,49,47,32,1,0,0,0,0,64,0,-1--1--1,,1|(315,574)|
+10,50,perception of AI tools,1323,516,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,51,50,29,1,0,0,0,0,64,0,-1--1--1,,1|(1239,517)|
+1,52,50,30,1,0,0,0,0,64,0,-1--1--1,,1|(1274,555)|
+10,53,LIMIT ON USERS,489,263,37,19,8,3,0,0,0,0,0,0
+10,54,LIMIT ON INSTITUTIONS,705,685,57,19,8,3,0,0,0,0,0,0
+1,55,53,6,1,0,0,0,0,64,0,-1--1--1,,1|(519,371)|
+1,56,54,18,1,0,0,0,0,64,0,-1--1--1,,1|(636,656)|
+10,57,IMPACT OF AI EDUCATION ON USER ADOPTION RATE,168,439,85,28,8,3,0,0,0,0,0,0
+10,58,IMPACT OF AI PERCEPTION ON INSTITUTION ADOPTION RATE,137,599,111,28,8,3,0,0,0,0,0,0
+1,59,57,31,1,0,0,0,0,64,0,-1--1--1,,1|(266,461)|
+1,60,58,32,1,0,0,0,0,64,0,-1--1--1,,1|(264,596)|
+10,61,IMPACT OF AI PERCEPTION ON TIME FOR USER TO ABANDON,1379,428,96,28,8,3,0,0,0,0,0,0
+10,62,IMPACT OF AI PERCEPTION ON TIME FOR INSTITUTIONS TO ABANDON,1407,584,113,28,8,3,0,0,0,0,0,0
+1,63,61,29,1,0,0,0,0,64,0,-1--1--1,,1|(1239,471)|
+1,64,62,30,1,0,0,0,0,64,0,-1--1--1,,1|(1219,597)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Community Knowledge,692,358,56,34,3,131,0,0,0,0,0,0
+12,2,48,446,361,10,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(595,361)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(499,361)|
+11,5,48,548,361,6,8,34,3,0,0,1,0,0,0
+10,6,change in community knowledge,548,388,66,19,40,3,0,0,-1,0,0,0
+10,7,INITIAL COMMUNITY KNOWLEDGE,771,221,53,28,8,3,0,0,0,0,0,0
+10,8,TIME TO CHANGE COMMUNITY KNOWLEDGE,731,494,69,28,8,3,0,0,0,0,0,0
+10,9,expected community knowledge,374,234,66,19,8,3,0,0,0,0,0,0
+1,10,9,6,1,0,0,0,0,64,0,-1--1--1,,1|(380,295)|
+1,11,7,1,1,0,0,0,0,64,1,-1--1--1,,1|(775,271)|
+1,12,8,6,1,0,0,0,0,64,0,-1--1--1,,1|(624,498)|
+1,13,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(676,407)|
+10,14,Community Beliefs,1221,360,54,28,3,131,0,0,0,0,0,0
+12,15,48,971,367,10,8,0,3,0,0,-1,0,0,0
+1,16,18,14,4,0,0,22,0,0,0,-1--1--1,,1|(1123,367)|
+1,17,18,15,100,0,0,22,0,0,0,-1--1--1,,1|(1024,367)|
+11,18,48,1074,367,6,8,34,3,0,0,1,0,0,0
+10,19,change in community beliefs,1074,394,57,19,40,3,0,0,-1,0,0,0
+10,20,INITIAL COMMUNITY BELIEFS,1266,217,53,28,8,3,0,0,0,0,0,0
+10,21,TIME TO CHANGE COMMUNITY BELIEFS,1013,491,86,19,8,3,0,0,0,0,0,0
+10,22,expected community beliefs,941,237,57,19,8,3,0,0,0,0,0,0
+1,23,22,19,1,0,0,0,0,64,0,-1--1--1,,1|(932,303)|
+1,24,20,14,1,0,0,0,0,64,1,-1--1--1,,1|(1274,276)|
+1,25,21,19,1,0,0,0,0,64,0,-1--1--1,,1|(1032,441)|
+1,26,14,19,1,0,0,0,0,64,0,-1--1--1,,1|(1199,417)|
+10,27,perception of AI tools,882,579,86,24,8,131,0,0,0,0,0,0
+1,28,1,27,1,0,0,0,0,64,0,-1--1--1,,1|(813,412)|
+1,29,14,27,1,0,0,0,0,64,0,-1--1--1,,1|(1106,581)|
+10,30,perception of AI tools,165,166,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,31,perception of AI tools,934,129,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,32,30,9,1,0,0,0,0,64,0,-1--1--1,,1|(214,231)|
+1,33,7,9,1,0,0,0,0,64,0,-1--1--1,,1|(642,182)|
+1,34,31,22,1,0,0,0,0,64,0,-1--1--1,,1|(947,183)|
+1,35,20,22,1,0,0,0,0,64,0,-1--1--1,,1|(1168,162)|
+10,36,IMPACT OF COMMUNITY KNOWLEDGE ON PERCEPTION OF AI TOOLS,597,607,107,28,8,3,0,0,0,0,0,0
+10,37,IMPACT OF COMMUNITY BELIEFS ON PERCEPTIONS OF AI TOOLS,1273,617,112,36,8,131,0,0,0,0,0,0
+1,38,36,27,1,0,0,0,0,64,0,-1--1--1,,1|(721,647)|
+1,39,37,27,1,0,0,0,0,64,0,-1--1--1,,1|(1088,654)|
+10,40,Quality of Social Discourse,673,75,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,41,40,9,1,0,0,0,0,64,0,-1--1--1,,1|(512,115)|
+1,42,40,22,1,0,0,0,0,64,0,-1--1--1,,1|(797,96)|
+10,43,IMPACT OF AI LITERACY ON COMMUNITY KNOWLEDGE,152,350,96,28,8,3,0,0,0,0,0,0
+10,44,IMPACT OF AI TRANSPARENCY ON COMMUNITY BELIEFS,1105,285,86,28,8,3,0,0,0,0,0,0
+1,45,43,9,1,0,0,0,0,64,0,-1--1--1,,1|(273,336)|
+1,46,44,22,1,0,0,0,0,64,0,-1--1--1,,1|(993,292)|
+10,47,Quality of AI Tools,887,672,47,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,48,47,27,1,0,0,0,0,64,0,-1--1--1,,1|(871,634)|
+10,49,unemployment rate,1027,547,51,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,50,49,27,1,0,0,0,0,64,0,-1--1--1,,1|(962,533)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 3
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Quality of Social Discourse,744,386,66,32,3,131,0,0,0,0,0,0
+12,2,48,490,383,10,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(637,383)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(542,383)|
+11,5,48,590,383,6,8,34,3,0,0,1,0,0,0
+10,6,change in quality of social discourse,590,410,61,19,40,3,0,0,-1,0,0,0
+10,7,INITIAL QUALITY OF SOCIAL DISCOURSE,827,233,81,19,8,3,0,0,0,0,0,0
+10,8,expected quality of social discourse,376,272,60,19,8,3,0,0,0,0,0,0
+10,9,TIME TO CHANGE SOCIAL DISCOURSE,725,527,78,19,8,3,0,0,0,0,0,0
+1,10,7,1,1,0,0,0,0,64,1,-1--1--1,,1|(821,295)|
+1,11,8,6,1,0,0,0,0,64,0,-1--1--1,,1|(384,335)|
+1,12,9,6,1,0,0,0,0,64,0,-1--1--1,,1|(624,503)|
+1,13,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(710,439)|
+10,14,User AI Tool Adoption,974,87,48,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,15,Institution AI Tool Adoption,1258,322,63,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,16,perception of AI tools,262,113,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,17,16,8,1,0,0,0,0,64,0,-1--1--1,,1|(330,161)|
+1,18,7,8,1,0,0,0,0,64,0,-1--1--1,,1|(604,335)|
+10,19,LIMIT ON INSTITUTIONS,1131,107,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,20,LIMIT ON USERS,1254,238,42,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,21,IMPACT OF AI QUALITY ON SOCIAL DISCOURSE,130,313,83,28,8,3,0,0,0,0,0,0
+1,22,21,8,1,0,0,0,0,64,0,-1--1--1,,1|(249,314)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 4
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Quality of AI Tools,744,421,53,36,3,131,0,0,0,0,0,0
+12,2,48,503,429,10,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(649,429)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(554,429)|
+11,5,48,602,429,6,8,34,3,0,0,1,0,0,0
+10,6,change in quality of AI tools,602,456,61,19,40,3,0,0,-1,0,0,0
+10,7,expected quality of AI tools,429,330,60,19,8,3,0,0,0,0,0,0
+10,8,TIME TO CHANGE QUALITY OF AI TOOLS,745,557,69,28,8,3,0,0,0,0,0,0
+10,9,INITIAL QUALITY OF AI TOOLS,783,290,68,19,8,3,0,0,0,0,0,0
+1,10,7,6,1,0,0,0,0,64,0,-1--1--1,,1|(451,413)|
+1,11,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(701,474)|
+1,12,8,6,1,0,0,0,0,64,0,-1--1--1,,1|(640,539)|
+1,13,9,1,1,0,0,0,0,64,1,-1--1--1,,1|(802,351)|
+10,14,REGULATIONS,371,198,56,11,8,3,0,0,0,0,0,0
+1,15,14,7,1,0,0,0,0,64,0,-1--1--1,,1|(396,262)|
+1,16,9,7,1,0,0,0,0,64,0,-1--1--1,,1|(677,245)|
+10,17,QUALITY STANDARDS,179,254,49,19,8,3,0,0,0,0,0,0
+10,18,ETHICS,165,376,29,11,8,3,0,0,0,0,0,0
+10,19,RESPONSIBLE RESEARCH,208,475,55,19,8,3,0,0,0,0,0,0
+10,20,PUBLIC PRIVATE PARTNERSHIPS,295,574,65,19,8,3,0,0,0,0,0,0
+1,21,20,7,1,0,0,0,0,64,0,-1--1--1,,1|(314,445)|
+1,22,19,7,1,0,0,0,0,64,0,-1--1--1,,1|(244,402)|
+1,23,18,7,1,0,0,0,0,64,0,-1--1--1,,1|(231,328)|
+1,24,17,7,1,0,0,0,0,64,0,-1--1--1,,1|(273,261)|
+10,25,MULTIPLIER,78,175,47,11,8,3,0,0,0,0,0,0
+1,26,25,14,1,0,0,0,0,64,0,-1--1--1,,1|(156,155)|
+1,27,25,17,1,0,0,0,0,64,0,-1--1--1,,1|(122,203)|
+1,28,25,18,1,0,0,0,0,64,0,-1--1--1,,1|(78,248)|
+1,29,25,19,1,0,0,0,0,64,0,-1--1--1,,1|(75,306)|
+1,30,25,20,1,0,0,0,0,64,0,-1--1--1,,1|(59,361)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 5
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Institution AI Tool Adoption,880,174,63,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,2,User AI Tool Adoption,507,458,48,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,3,Workers,1015,328,50,29,3,131,0,0,0,0,0,0
+12,4,48,813,327,10,8,0,3,0,0,-1,0,0,0
+1,5,7,3,4,0,0,22,0,0,0,-1--1--1,,1|(936,327)|
+1,6,7,4,100,0,0,22,0,0,0,-1--1--1,,1|(859,327)|
+11,7,48,901,327,6,8,34,3,0,0,1,0,0,0
+10,8,supply of AI workers,901,354,40,19,40,3,0,0,-1,0,0,0
+10,9,INITIAL WORKERS,1158,123,41,19,8,3,0,0,0,0,0,0
+10,10,AVERAGE AI WORKERS PER INSTITUTION,682,172,58,28,8,3,0,0,0,0,0,0
+10,11,institution adoption,337,254,35,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,12,institution abandonment,357,183,48,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,13,user adoption,475,223,52,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,14,user abandonment,347,106,48,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,15,INITIAL WORKING AGE POPULATION,1210,46,72,19,8,3,0,0,0,0,0,0
+10,16,INITIAL EMPLOYMENT RATE,1316,149,80,19,8,3,0,0,0,0,0,0
+1,17,15,9,1,0,0,0,0,64,0,-1--1--1,,1|(1169,96)|
+1,18,16,9,1,0,0,0,0,64,0,-1--1--1,,1|(1267,106)|
+10,19,unemployment rate,1349,343,59,11,8,3,0,0,0,0,0,0
+1,20,15,19,1,0,0,0,0,64,0,-1--1--1,,1|(1407,100)|
+1,21,3,19,1,0,0,0,0,64,0,-1--1--1,,1|(1143,448)|
+10,22,AVERAGE DISPLACEMENT PER INSTITUTION,645,292,79,28,8,3,0,0,0,0,0,0
+10,23,TIME TO HIRE AND LAY OFF,1004,444,55,19,8,3,0,0,0,0,0,0
+1,24,23,8,1,0,0,0,0,64,0,-1--1--1,,1|(947,411)|
+1,25,3,8,1,0,0,0,0,64,0,-1--1--1,,1|(990,375)|
+10,26,desired workers,835,261,51,11,8,3,0,0,0,0,0,0
+1,27,1,26,1,0,0,0,0,64,0,-1--1--1,,1|(847,222)|
+1,28,10,26,1,0,0,0,0,64,0,-1--1--1,,1|(769,194)|
+1,29,22,26,1,0,0,0,0,64,0,-1--1--1,,1|(730,267)|
+1,30,9,26,1,0,0,0,0,64,0,-1--1--1,,1|(1014,173)|
+1,31,26,8,1,0,0,0,0,64,0,-1--1--1,,1|(831,292)|
+1,32,9,3,0,0,0,0,0,64,1,-1--1--1,,1|(1094,214)|
+///---\\\
+:GRAPH Baseline_Run
+:TITLE Baseline Run
+:SCALE
+:VAR Community Beliefs
+:LINE-WIDTH 2
+:SCALE
+:VAR Quality of AI Tools
+:LINE-WIDTH 2
+:SCALE
+:VAR Quality of Social Discourse
+:LINE-WIDTH 2
+:SCALE
+:VAR Workers
+:LINE-WIDTH 2
+:SCALE
+:VAR User AI Tool Adoption
+:LINE-WIDTH 2
+:L<%^E!@
+9:Hoped For
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:100,3
+27:2,
+34:0,
+4:Time
+5:MULTIPLIER
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:0
+24:0
+25:24
+26:24
